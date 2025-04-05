@@ -1,4 +1,4 @@
-# Editor 类方法文档
+# Editor.js 类方法文档
 
 ## 方法列表
 
@@ -68,3 +68,66 @@
 - **`execute(cmd, optionalName)`**: 执行命令。
 - **`undo()`**: 撤销上一步操作。
 - **`redo()`**: 重做上一步操作。
+
+
+
+
+# Viewport.js 类方法文档
+
+## 方法列表
+
+### 构造函数
+- **`Viewport(editor)`**: 初始化 Viewport 实例，设置渲染器、相机、场景等，并添加各种控制和事件监听。
+
+### 渲染器管理
+- **`initPT()`**: 初始化路径追踪器（Pathtracer）。
+- **`updatePTBackground()`**: 更新路径追踪器的背景。
+- **`updatePTEnvironment()`**: 更新路径追踪器的环境。
+- **`updatePTMaterials()`**: 更新路径追踪器的材质。
+- **`updatePT()`**: 更新路径追踪器。
+
+### 渲染
+- **`render()`**: 渲染场景，包括主场景、辅助场景和视图辅助工具。
+
+### 事件处理
+- **`handleClick()`**: 处理点击事件，检测交集并触发信号。
+- **`onMouseDown(event)`**: 处理鼠标按下事件。
+- **`onMouseUp(event)`**: 处理鼠标释放事件。
+- **`onTouchStart(event)`**: 处理触摸开始事件。
+- **`onTouchEnd(event)`**: 处理触摸结束事件。
+- **`onDoubleClick(event)`**: 处理双击事件，聚焦对象。
+
+### 辅助工具
+- **`updateAspectRatio()`**: 更新相机的宽高比。
+- **`getMousePosition(dom, x, y)`**: 获取鼠标位置。
+- **`updateGridColors(grid1, grid2, colors)`**: 更新网格颜色。
+
+### 信号处理
+- **`signals.cameraPositionChanged.add(callback)`**: 处理相机位置改变信号。
+- **`signals.editorCleared.add(callback)`**: 处理编辑器清除信号。
+- **`signals.transformModeChanged.add(callback)`**: 处理变换模式改变信号。
+- **`signals.snapChanged.add(callback)`**: 处理快照改变信号。
+- **`signals.spaceChanged.add(callback)`**: 处理空间改变信号。
+- **`signals.rendererUpdated.add(callback)`**: 处理渲染器更新信号。
+- **`signals.rendererCreated.add(callback)`**: 处理渲染器创建信号。
+- **`signals.rendererDetectKTX2Support.add(callback)`**: 处理检测 KTX2 支持信号。
+- **`signals.sceneGraphChanged.add(callback)`**: 处理场景图改变信号。
+- **`signals.cameraChanged.add(callback)`**: 处理相机改变信号。
+- **`signals.objectSelected.add(callback)`**: 处理对象选择信号。
+- **`signals.objectFocused.add(callback)`**: 处理对象聚焦信号。
+- **`signals.geometryChanged.add(callback)`**: 处理几何体改变信号。
+- **`signals.objectChanged.add(callback)`**: 处理对象改变信号。
+- **`signals.objectRemoved.add(callback)`**: 处理对象移除信号。
+- **`signals.materialChanged.add(callback)`**: 处理材质改变信号。
+- **`signals.sceneBackgroundChanged.add(callback)`**: 处理场景背景改变信号。
+- **`signals.sceneEnvironmentChanged.add(callback)`**: 处理场景环境改变信号。
+- **`signals.sceneFogChanged.add(callback)`**: 处理场景雾改变信号。
+- **`signals.sceneFogSettingsChanged.add(callback)`**: 处理场景雾设置改变信号。
+- **`signals.viewportCameraChanged.add(callback)`**: 处理视口相机改变信号。
+- **`signals.viewportShadingChanged.add(callback)`**: 处理视口着色模式改变信号。
+- **`signals.windowResize.add(callback)`**: 处理窗口大小改变信号。
+- **`signals.showHelpersChanged.add(callback)`**: 处理显示辅助工具改变信号。
+- **`signals.cameraResetted.add(callback)`**: 处理相机重置信号。
+
+### 动画
+- **`animate()`**: 动画循环，更新混合器、视图辅助工具和路径追踪器。
